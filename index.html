@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header class="megna-header">
+        <div class="container">
+            <div class="logo">
+                <h3>new date</h3>
+            </div>
+            <nav class="nav">
+                <a href="math.html">Math examples</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Foydalanuvchining joriy vaqtini olish </h3>
+                        <p>let currentDate = new Date(); <br>
+                            console.log(currentDate);.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Aniq bir sanani yaratish uchun yili, oyi, kuni va boshqa parametrlar</h3>
+                        <p> // Oy 0-indeksli (0 - yanvar, 11 - dekabr) <br> let specificDate = new Date(2024, 7, 29);
+                            console.log(specificDate);
+                            .</p>
+                    </div>
+                    <div class="card">
+                        <h3>Sana stringini new Date() ga uzatish orqali sana obyektini yaratish mumkin.</h3>
+                        <p>let dateString = new Date("2024-yil 29-avgust 14:30:00"); <br>
+                            console.log(dateString);
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Sanani timestamp (1970-yil 1-yanvardan boshlab hisoblangan millisekundlar) yordamida ham
+                            yaratish mumkin.</h3>
+                        <p>let timestampDate = new Date(1725100200000);<br>
+                            console.log(timestampDate);
+                        </p>
+                    </div>
+                </div>
+
+                <div class="title">
+                    <b>Olish etodlari</b>
+                </div>
+                <div class="main__info">
+                    <div class="main__info-text">
+                        <b id="text-to-copy">getFullYear(): Yilni qaytaradi.  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getMonth(): Oyni qaytaradi (0-11).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getDate(): Oyning kunini qaytaradi (1-31).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getDay(): Haftaning kunini qaytaradi (0-6).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getHours(): Soatni qaytaradi (0-23).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getMinutes(): Daqiqani qaytaradi (0-59).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getSeconds(): Soniyani qaytaradi (0-59).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getMilliseconds(): Millisekundlarni qaytaradi (0-999).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getTime(): Vaqt belgisini millisekundlarda qaytaradi.  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                        <b id="text-to-copy">getTimezoneOffset(): Vaqt zonasining farqini daqiqalarda qaytaradi.  <button onclick="copyText()" class="copy-btn">Nusxa olish</button> </b>
+                    </div>
+                </div>
+
+                <div class="title">
+                    <b>O'rnatish Metodlari</b>
+                </div>
+                <div class="main__info">
+                    <div class="main__info-text">
+                        <b id="text-to-copy">setFullYear(): Yilni o'rnatadi.  <button onclick="copyText()" class="copy-btn">Nusxa olish</button></b>
+                        <b id="text-to-copy">setMonth(): Oyni o'rnatadi (0-11).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button></b>
+                        <b id="text-to-copy">setDate(): Oyning kunini o'rnatadi (1-31). <button onclick="copyText()" class="copy-btn">Nusxa olish</button></b>
+                        <b id="text-to-copy">setHours(): Soatni o'rnatadi (0-23).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button></b>
+                        <b id="text-to-copy">setMinutes(): Daqiqani o'rnatadi (0-59).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button></b>
+                        <b id="text-to-copy">setSeconds(): Soniyani o'rnatadi (0-59).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button></b>
+                        <b id="text-to-copy">setMilliseconds(): Millisekundlarni o'rnatadi (0-999).  <button onclick="copyText()" class="copy-btn">Nusxa olish</button></b>
+                        <b id="text-to-copy">setTime(): Vaqtni timestamp yordamida o'rnatadi.  <button onclick="copyText()" class="copy-btn">Nusxa olish</button></b>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script>
+
+        function copyText() {
+
+            let textToCopy = document.getElementById("text-to-copy").innerText;
+            let tempInput = document.createElement("textarea");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // Mobil qurilmalar uchun
+            navigator.clipboard.writeText(tempInput.value);
+            document.body.removeChild(tempInput);
+
+            alert("Matn nusxalandi");
+        }
+
+
+        let date = new Date();
+        console.log(date.toLocaleDateString('uz-UZ'));  // "29.08.2024"
+        // console.log(date.toISOString());               // "2024-08-29T09:30:00.000Z"
+
+    </script>
+
+</body>
+
+</html>
